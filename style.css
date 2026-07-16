@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------*/
-/*-----------Stylesheet that affect whole web----------------*/
+/*-----------Base and global styles--------------------------*/
 /*-----------------------------------------------------------*/
 
 :root {
@@ -16,7 +16,7 @@
     --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
-body{
+body {
     background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-accent) 100%);
     color: var(--text-main);
     display: flex;
@@ -36,18 +36,6 @@ p {
     text-align: left;
     letter-spacing: 0.2px;
     word-wrap: break-word;
-}
-
-.about p,
-.education p,
-.experience p,
-.projects p,
-.skills p,
-.certification p,
-.intrest p,
-.contact p {
-    margin-bottom: 1rem;
-    max-width: 70ch;
 }
 
 h1 {
@@ -96,7 +84,7 @@ a {
     transition: all 0.25s ease;
 }
 
-a:hover{
+a:hover {
     color: var(--text-main);
     text-decoration: none;
     transform: translateY(-2px);
@@ -106,7 +94,7 @@ li {
     display: inline-block;
     list-style-type: none;
     margin: 10px 0;
-}   
+}
 
 span {
     color: var(--accent);
@@ -168,8 +156,20 @@ span:hover {
     display: inline-block;
 }
 
+.about p,
+.education p,
+.experience p,
+.projects p,
+.skills p,
+.certification p,
+.intrest p,
+.contact p {
+    margin-bottom: 1rem;
+    max-width: 70ch;
+}
+
 /*-----------------------------------------------------------*/
-/*--------------Stylesheet for the About Me------------------*/
+/*-----------Section card layout styles----------------------*/
 /*-----------------------------------------------------------*/
 
 .about,
@@ -187,24 +187,25 @@ span:hover {
     z-index: 1;
     overflow: hidden;
     box-sizing: border-box;
-}
-
-.about {
     border-radius: 20px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: 300px;
-    text-align: center;
-    padding: 30px;
     margin: 20px;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------*/
+/*-----------About section styles----------------------------*/
+/*-----------------------------------------------------------*/
+
+.about {
+    height: 300px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 2fr;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "profile-image bio-heading"
         "profile-image bio";
-    grid-gap: 20px;
+    gap: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -246,23 +247,15 @@ span:hover {
 }
 
 /*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Education-----------------*/
+/*-----------Education section styles------------------------*/
 /*-----------------------------------------------------------*/
 
-.education{
+.education {
     background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 90px 2fr;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "school-image bio-heading"
         "college-image bio";
     gap: 20px;
@@ -289,7 +282,7 @@ span:hover {
     grid-area: college-image;
 }
 
-.education h2{
+.education h2 {
     color: #00ccff;
     height: 50px;
     font-size: 36px;
@@ -300,32 +293,33 @@ span:hover {
     grid-area: bio-heading;
 }
 
-.education p{
+.education p {
     line-height: 1.5;
     margin-top: 0;
     grid-area: bio;
     padding: 10px;
     position: relative;
-    margin-top: 0
 }
 
 /*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Experience----------------*/
+/*-----------Experience, projects, skills styles-------------*/
 /*-----------------------------------------------------------*/
 
-.experience{
+.experience,
+.projects,
+.skills,
+.certification,
+.intrest,
+.contact {
     background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
 }
 
-.experience h2{
+.experience h2,
+.projects h2,
+.skills h2,
+.certification h2,
+.intrest h2,
+.contact h2 {
     color: #00ccff;
     height: 50px;
     font-size: 36px;
@@ -335,88 +329,13 @@ span:hover {
     text-decoration-thickness: 3px;
 }
 
-/*-----------------------------------------------------------*/
-/*--------------Stylesheet for the projects------------------*/
-/*-----------------------------------------------------------*/
-
-
-.projects{
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-}
-
-.projects h2{
-    color: #00ccff;
-    height: 50px;
-    font-size: 36px;
-    margin: 2;
-    text-decoration: underline;
-    text-decoration-color: #00ccff;
-    text-decoration-thickness: 3px;
-}
-
-/*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Skills--------------------*/
-/*-----------------------------------------------------------*/
-
-.skills{
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-}
-
-.skills h2{
-    color: #00ccff;
-    height: 50px;
-    font-size: 36px;
-    margin: 2;
-    text-decoration: underline;
-    text-decoration-color: #00ccff;
-    text-decoration-thickness: 3px;
-}
-
-.skills p{
+.skills p {
     font-size: 17px;
 }
 
 /*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Certification-------------*/
+/*-----------Certification and image styles-----------------*/
 /*-----------------------------------------------------------*/
-
-.certification{
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-}
-
-.certification h2{
-    color: #00ccff;
-    height: 50px;
-    font-size: 36px;
-    margin: 2;
-    text-decoration: underline;
-    text-decoration-color: #00ccff;
-    text-decoration-thickness: 3px;
-}
 
 picture img {
     display: flex;
@@ -427,72 +346,20 @@ picture img {
     margin: 20px auto;
 }
 
-picture label{
+picture label {
     display: block;
     text-align: center;
     color: #00ccff;
     font-size: larger;
-    font-weight: bold;;
-}
-
-/*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Intrest-------------------*/
-/*-----------------------------------------------------------*/
-
-.intrest{
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-}
-
-.intrest h2{
-    color: #00ccff;
-    height: 50px;
-    font-size: 36px;
-    margin: 2;
-    text-decoration: underline;
-    text-decoration-color: #00ccff;
-    text-decoration-thickness: 3px;
-}
-
-/*-----------------------------------------------------------*/
-/*--------------Stylesheet for the Contacts------------------*/
-/*-----------------------------------------------------------*/
-
-.contact{
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: auto;
-    height: auto;
-    text-align: center;
-    padding: 30px;
-    margin: 20px;
-}
-
-.contact h2{
-    color: #00ccff;
-    height: 50px;
-    font-size: 36px;
-    margin: 2;
-    text-decoration: underline;
-    text-decoration-color: #00ccff;
-    text-decoration-thickness: 3px;
+    font-weight: bold;
 }
 
 .contact a {
-    margin: 0, 20px ;
+    margin: 0 20px;
 }
 
 /*-----------------------------------------------------------*/
-/*-----Stylesheet for the device with max-width of 657px-----*/
+/*-----------Responsive styles for small screens------------*/
 /*-----------------------------------------------------------*/
 
 @media (max-width: 657px) {
@@ -666,9 +533,9 @@ picture label{
     }
 }
 
-/*------------------------------------------------------------------------*/
-/*Stylesheet for the device with max-width of 900px and min-width of 658px*/
-/*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------Responsive styles for medium screens----------*/
+/*-----------------------------------------------------------*/
 
 @media (min-width: 658px) and (max-width: 900px) {
     body {
@@ -739,7 +606,7 @@ picture label{
         border-radius: 14px;
     }
 
-    .about{
+    .about {
         height: 400px;
     }
 
@@ -777,7 +644,7 @@ picture label{
 }
 
 /*-----------------------------------------------------------*/
-/*--------------Theme-aware section styling------------------*/
+/*-----------Theme-aware section styling-------------------*/
 /*-----------------------------------------------------------*/
 
 .about,
@@ -828,7 +695,7 @@ picture label{
 }
 
 /*-----------------------------------------------------------*/
-/*-----------------------Footer Styling----------------------*/
+/*-----------Footer styling--------------------------------*/
 /*-----------------------------------------------------------*/
 
 .site-footer {
@@ -873,7 +740,7 @@ picture label{
 }
 
 /*-----------------------------------------------------------*/
-/*-----Stylesheet for the device with min-width of 750px-----*/
+/*-----------Large-screen enhancements---------------------*/
 /*-----------------------------------------------------------*/
 
 @media (min-width: 750px) {
@@ -1007,7 +874,7 @@ picture label{
         height: 600px;
     }
 
-    .education .school-img{
+    .education .school-img {
         margin-top: 180px;
         margin-bottom: 80px;
     }
@@ -1114,6 +981,10 @@ picture label{
     }
 }
 
+/*-----------------------------------------------------------*/
+/*-----------Animations and transitions---------------------*/
+/*-----------------------------------------------------------*/
+
 @keyframes titleGlow {
     0%, 100% {
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
@@ -1139,9 +1010,4 @@ picture label{
         line-height: 1.75;
     }
 }
-
-
-
-
-
 
