@@ -9,6 +9,15 @@ Welcome to my personal portfolio website! This project showcases my background, 
 
 Hello! I'm **Aditya Bakodiya**, a 16-year-old Computer Science diploma student from **Polytechnic College, Daman**. I am passionate about technology, programming, and continuously learning new skills. This portfolio serves as a central place where you can learn more about me, my achievements, and my work.
 
+## 🎯 Purpose
+
+The goal of this project is to:
+
+* Present my personal and educational background.
+* Showcase my web development skills.
+* Share my learning journey and achievements.
+* Provide an easy way for recruiters, educators, and fellow developers to know more about me.
+
 ## 💻 How to View This Portfolio
 
 There are two ways to view this project on your computer.
@@ -47,15 +56,6 @@ There are two ways to view this project on your computer.
 ## 📂 Current Project
 
 This portfolio is currently my primary public project. Although I have worked on several other projects, such as a **Python Calculator** and a **Snake & Ladder Game** built with HTML, CSS, and JavaScript, they are still under development and are not yet available in this repository.
-
-## 🎯 Purpose
-
-The goal of this project is to:
-
-* Present my personal and educational background.
-* Showcase my web development skills.
-* Share my learning journey and achievements.
-* Provide an easy way for recruiters, educators, and fellow developers to know more about me.
 
 ## 🚀 Future Improvements
 
