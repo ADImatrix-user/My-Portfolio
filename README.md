@@ -60,8 +60,6 @@ This portfolio is currently my primary public project. Although I have worked on
 ## 🚀 Future Improvements
 
 * Add more completed projects.
-* Improve animations and UI/UX.
-* Add dark/light mode.
 * Enhance responsiveness.
 * Showcase additional programming languages and technologies.
 * Integrate new certifications and achievements.
