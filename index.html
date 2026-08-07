@@ -1,52 +1,909 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Bakodiya | Portfolio - Computer Science Student</title>
+  <meta name="description" content="Personal Portfolio of Aditya Bakodiya - 16-year-old Diploma in Computer Science student at Polytechnic College Daman. Exploring web development, Python, and Cybersecurity.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
 
-        <nav class="nav-menu">
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">☰ Menu</label>
+  <!-- Interactive Particle Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-light"></div>
 
-            <ul class="nav-links">
-             <li><a href="index.html">About Me</a></li>
-             <li><a href="education.html">Education</a></li>
-             <li><a href="experience.html">Experience</a></li>
-             <li><a href="projects.html">Projects</a></li>
-             <li><a href="skills.html">Skills</a></li>
-             <li><a href="certifications.html">Certifications</a></li>
-             <li><a href="intrest.html">Intrest</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code">&lt;AB/&gt;</span>
+        <span class="brand-name">Aditya Bakodiya</span>
+      </a>
 
-    <section class="about">
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+        <li><a href="#certificates" class="nav-link"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+      </ul>
 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcpDr9xQo2CM68XBeRrdkrm8vTNG2uFV89013jGejqA&s=10" alt="Profile Picture" class="profile-image">
+      <div class="nav-actions">
+        <button id="sound-toggle" class="btn-icon" title="Toggle Sound Effects" aria-label="Toggle Sound">
+          <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+        </button>
+        <button id="theme-toggle" class="btn-icon" title="Toggle Accent Color" aria-label="Toggle Accent Theme">
+          <i class="fa-solid fa-palette"></i>
+        </button>
+        <button id="mobile-toggle" class="btn-icon mobile-only" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-        <h2> About Me </h2>
-
-        <p> Hello! My name is <span>Aditya Bakodiya</span>. I am a <span>16-year-old student</span> 
-            who has recently completed my <span>10th standard</span> at <span>Shree Machhi Mahajan 
-                English Medium School, Daman</span>. I am passionate about <span>technology</span> 
-                and <span>programming</span>, with a strong interest in learning new skills and 
-                exploring the field of software development. 
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content" data-tilt>
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span class="status-text">Polytechnic College Daman &bull; Rank #7 Merit</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Hi, I'm <span class="text-gradient">Aditya Bakodiya</span>
+        </h1>
+        
+        <div class="typewriter-container">
+          <span class="typewriter-prefix">I am a </span>
+          <span id="typewriter-text" class="typewriter-text"></span>
+          <span class="cursor">&nbsp;</span>
+        </div>
+        
+        <p class="hero-description">
+          A 16-year-old Computer Science Diploma student passionate about programming, web development, cybersecurity, and creating practical tech solutions.
         </p>
+
+        <div class="hero-buttons">
+          <button id="btn-download-resume" class="btn btn-primary">
+            <i class="fa-solid fa-file-arrow-down"></i> Academic Resume / Summary
+          </button>
+          <a href="#projects" class="btn btn-glass">
+            <i class="fa-solid fa-rocket"></i> Explore My Work
+          </a>
+          <button id="btn-open-result-hero" class="btn btn-neon">
+            <i class="fa-solid fa-award"></i> View 10th Result (82.17%)
+          </button>
+        </div>
+
+        <div class="hero-quick-stats">
+          <div class="stat-card">
+            <span class="stat-number">16</span>
+            <span class="stat-label">Years Old</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">7<sup>th</sup></span>
+            <span class="stat-label">Diploma Merit Rank</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Certificates Earned</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">82.17%</span>
+            <span class="stat-label">10<sup>th</sup> Board Score</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="avatar-frame-wrapper" data-tilt>
+          <div class="avatar-glow"></div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcpDr9xQo2CM68XBeRrdkrm8vTNG2uFV89013jGejqA&s=10" 
+               alt="Aditya Bakodiya Photo" class="avatar-img" id="my-avatar-img">
+          
+          <div class="avatar-badge badge-top">
+            <i class="fa-solid fa-shield-halved"></i> Cybersecurity Enthusiast
+          </div>
+          <div class="avatar-badge badge-bottom">
+            <i class="fa-brands fa-html5"></i> Web Dev Learner
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down-indicator" aria-label="Scroll down">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    
+    <!-- About Me Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get To Know Me</span>
+          <h2 class="section-title">About <span class="text-gradient">Aditya</span></h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card" data-tilt>
+            <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>Who I Am</h3>
+            <p>
+              Hello! My name is <strong>Aditya Bakodiya</strong>. I am a 16-year-old student who recently completed my 10th standard at Shree Machhi Mahajan English Medium School, Daman. I am currently pursuing a <strong>Diploma in Computer Science</strong> at Polytechnic College, Daman.
+            </p>
+            <p>
+              I am genuinely passionate about technology, programming, and cybersecurity. I love exploring how computer systems work under the hood and continuously seek opportunities to expand my knowledge and practical coding skills.
+            </p>
+          </div>
+
+          <div class="glass-card about-card" data-tilt>
+            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>My Philosophy & Goal</h3>
+            <p>
+              As a beginner, I believe in the power of consistent self-learning. I started by leveraging free resources like <strong>Coddy.tech</strong> and <strong>CISCO Networking Academy</strong> to build solid fundamentals in HTML, CSS, JavaScript, and Python.
+            </p>
+            <p>
+              My goal is to master software engineering and cybersecurity concepts, build real-world application solutions, and grow into a skilled developer who can solve meaningful problems.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer class="site-footer">
-        <p>© 2025 Aditya. All rights reserved.</p>
-        <p class="footer-note">This design and visual style are protected. No one has permission to copy or reproduce this style without written consent.</p>
-    </footer>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Academic Journey</span>
+          <h2 class="section-title">My <span class="text-gradient">Education</span></h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="timeline">
+          
+          <!-- Timeline Item 1: Diploma -->
+          <div class="timeline-item left">
+            <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="glass-card timeline-content" data-tilt>
+              <div class="timeline-header">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSA3_owKMUL1ejiLrfmd1aLWYRnpweARotw76G42lXpw&s=10" alt="Polytechnic College Daman" class="institution-img">
+                <div>
+                  <span class="badge badge-accent">Current Pursuing</span>
+                  <h3>Diploma in Computer Science</h3>
+                  <h4 class="institution-name">Polytechnic College, Daman</h4>
+                </div>
+              </div>
+              <p class="timeline-description">
+                Secured admission through merit, earning an impressive <strong>7<sup>th</sup> rank</strong> in the official admission list. Continuously strengthening computer science fundamentals, programming algorithms, and hardware networking concepts.
+              </p>
+              <div class="timeline-highlights">
+                <span class="tag"><i class="fa-solid fa-trophy"></i> Merit Rank 7</span>
+                <span class="tag"><i class="fa-solid fa-laptop"></i> Computer Science</span>
+                <span class="tag"><i class="fa-solid fa-location-dot"></i> Daman</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: 10th Standard -->
+          <div class="timeline-item right">
+            <div class="timeline-dot"><i class="fa-solid fa-school"></i></div>
+            <div class="glass-card timeline-content" data-tilt>
+              <div class="timeline-header">
+                <img src="https://plain-apac-prod-public.komododecks.com/202607/15/23j84yqVu6xcOYhljLIA/image.png" alt="Shree Machhi Mahajan School Daman" class="institution-img">
+                <div>
+                  <span class="badge badge-success">Completed</span>
+                  <h3>10<sup>th</sup> Standard Board</h3>
+                  <h4 class="institution-name">Shree Machhi Mahajan English Medium School, Daman</h4>
+                </div>
+              </div>
+              <p class="timeline-description">
+                Completed secondary school education with strong academic distinction. Achieved an overall board score of <strong>82.17%</strong> with a percentile rank of <strong>86.37</strong>.
+              </p>
+              <div class="timeline-actions">
+                <button id="btn-open-result" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-file-invoice"></i> View Official Result Card
+                </button>
+              </div>
+              <div class="timeline-highlights">
+                <span class="tag"><i class="fa-solid fa-chart-pie"></i> 82.17% Score</span>
+                <span class="tag"><i class="fa-solid fa-percent"></i> 86.37 Percentile</span>
+                <span class="tag"><i class="fa-solid fa-location-dot"></i> Daman</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Details Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="glass-card experience-banner" data-tilt>
+          <div class="exp-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="exp-content">
+            <span class="badge badge-outline">Career Status</span>
+            <h2>Work Experience & Aspirations</h2>
+            <p>
+              As a 16-year-old student, I do not yet have formal professional work experience. However, I am a <strong>fast learner</strong> equipped with strong curiosity and discipline. I actively build hands-on projects, complete online coding modules, and am eager to contribute effectively to real-world software opportunities, internships, and collaborative projects whenever the opportunity arises!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Technical Stack</span>
+          <h2 class="section-title">My <span class="text-gradient">Skills</span> & Tools</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- HTML & CSS Skill Card -->
+          <div class="glass-card skill-card" data-tilt>
+            <div class="skill-head">
+              <div class="skill-icon html-css-color"><i class="fa-brands fa-html5"></i></div>
+              <div class="skill-title-wrap">
+                <h3>HTML5 & CSS3</h3>
+                <span class="level-badge level-intermediate">Intermediate</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Capable of building modern, responsive, animated web layouts using CSS Grid, Flexbox, glassmorphic UI, keyframes, and custom web properties.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-info">
+                <span>Proficiency Level</span>
+                <span class="percentage">75%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 75%;"></div>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>Responsive Web Design</span>
+              <span>CSS Animations</span>
+              <span>Flexbox & Grid</span>
+            </div>
+          </div>
+
+          <!-- Python Skill Card -->
+          <div class="glass-card skill-card" data-tilt>
+            <div class="skill-head">
+              <div class="skill-icon python-color"><i class="fa-brands fa-python"></i></div>
+              <div class="skill-title-wrap">
+                <h3>Python</h3>
+                <span class="level-badge level-beginner">Beginner+</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Strong grasp of basic syntax, logic building, data structures, conditional loops, functions, and building terminal apps like calculators and logic puzzles.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-info">
+                <span>Proficiency Level</span>
+                <span class="percentage">60%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 60%;"></div>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>Basic Syntax</span>
+              <span>Logic Development</span>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+
+          <!-- JavaScript Skill Card -->
+          <div class="glass-card skill-card" data-tilt>
+            <div class="skill-head">
+              <div class="skill-icon js-color"><i class="fa-brands fa-square-js"></i></div>
+              <div class="skill-title-wrap">
+                <h3>JavaScript (ES6+)</h3>
+                <span class="level-badge level-beginner">Beginner</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Familiar with core programming concepts including variables, if-else conditionals, switch statements, loops, functions, DOM manipulation, and event handling.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-info">
+                <span>Proficiency Level</span>
+                <span class="percentage">50%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>DOM Interactions</span>
+              <span>Loops & Switch</span>
+              <span>Event Handling</span>
+            </div>
+          </div>
+
+          <!-- Cybersecurity & Tech Interests -->
+          <div class="glass-card skill-card" data-tilt>
+            <div class="skill-head">
+              <div class="skill-icon cyber-color"><i class="fa-solid fa-user-shield"></i></div>
+              <div class="skill-title-wrap">
+                <h3>Cybersecurity & Networking</h3>
+                <span class="level-badge level-exploring">Exploring</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Passionate about network fundamentals, system security, ethical hacking basics, computer architecture, and emerging tech standards through CISCO.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-info">
+                <span>Knowledge & Enthusiasm</span>
+                <span class="percentage">70%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>Networking Basics</span>
+              <span>Systems Security</span>
+              <span>CISCO Academics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects & Code Playground Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio & Practice Labs</span>
+          <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Featured Project Card: My Portfolio -->
+          <div class="glass-card project-card featured-project" data-tilt>
+            <div class="project-badge"><i class="fa-solid fa-star"></i> Showcase Project</div>
+            <div class="project-content">
+              <h3>My Portfolio (Web Application)</h3>
+              <p class="project-text">
+                This website serves as my primary digital portfolio. Beyond basic personal information, it demonstrates my HTML, CSS, and JavaScript capabilities, responsive UI styling, CSS custom keyframe animations, glassmorphism design, and interactive JS components.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3 Glassmorphism</span>
+                <span class="tech-tag">Vanilla JavaScript</span>
+                <span class="tech-tag">Web Audio API</span>
+                <span class="tech-tag">Canvas Particles</span>
+              </div>
+              <div class="project-links">
+                <span class="status-live"><i class="fa-solid fa-circle"></i> Currently Viewing Live</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Practice Lab Project 1: Snake & Ladder Game -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-badge-secondary">Practice Lab</div>
+            <div class="project-content">
+              <h3>Snake & Ladder Game</h3>
+              <p class="project-text">
+                Developed an interactive digital board game featuring Snake & Ladder game rules built using HTML, CSS, and JavaScript logic with dice roll triggers and player movement calculations.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-note">
+                <i class="fa-solid fa-lock"></i> Offline Practice Project
+              </div>
+            </div>
+          </div>
+
+          <!-- Practice Lab Project 2: Python Calculator -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-badge-secondary">Practice Lab</div>
+            <div class="project-content">
+              <h3>Python CLI Calculator</h3>
+              <p class="project-text">
+                Built a multi-functional command-line calculator using Python to process arithmetic operations, conditional error-handling, and looping menus for continuous calculation.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python 3</span>
+                <span class="tech-tag">CLI Interface</span>
+                <span class="tech-tag">Math Logic</span>
+              </div>
+              <div class="project-note">
+                <i class="fa-solid fa-lock"></i> Offline Practice Project
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Live Code Playground Widget -->
+        <div class="glass-card playground-wrapper">
+          <div class="playground-header">
+            <div class="playground-title">
+              <i class="fa-solid fa-terminal"></i>
+              <span>Interactive Code Sandbox & Playground</span>
+            </div>
+            <div class="playground-tabs">
+              <button class="tab-btn active" data-tab="html">HTML/CSS Demo</button>
+              <button class="tab-btn" data-tab="js">JavaScript Logic</button>
+              <button class="tab-btn" data-tab="python">Python Snippet</button>
+            </div>
+          </div>
+          <div class="playground-body">
+            <div class="code-editor-area">
+              <div class="editor-header">
+                <span id="editor-filename">index.html</span>
+                <button id="run-code-btn" class="btn btn-sm btn-accent"><i class="fa-solid fa-play"></i> Run Code</button>
+              </div>
+              <textarea id="code-input" class="code-textarea" spellcheck="false"></textarea>
+            </div>
+            <div class="code-output-area">
+              <div class="output-header">
+                <span>Output Console / Preview</span>
+              </div>
+              <div id="output-view" class="output-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Activity & Statistics Widget -->
+        <div class="glass-card github-widget-card" data-tilt style="margin-top: 2.5rem;">
+          <div class="github-widget-header">
+            <div class="gh-user-info">
+              <i class="fa-brands fa-github gh-logo"></i>
+              <div>
+                <h3>GitHub Activity & Statistics</h3>
+                <span class="gh-username">@ADImatrix-user</span>
+              </div>
+            </div>
+            <a href="https://github.com/ADImatrix-user" target="_blank" class="btn btn-sm btn-glass">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit GitHub Profile
+            </a>
+          </div>
+
+          <div class="github-stats-grid">
+            <div class="gh-stat-box">
+              <span class="gh-stat-num">HTML5 / CSS3</span>
+              <span class="gh-stat-label">Primary Stack</span>
+            </div>
+            <div class="gh-stat-box">
+              <span class="gh-stat-num">Python & JS</span>
+              <span class="gh-stat-label">Logic & CLI Tools</span>
+            </div>
+            <div class="gh-stat-box">
+              <span class="gh-stat-num">5+</span>
+              <span class="gh-stat-label">Verified Certifications</span>
+            </div>
+            <div class="gh-stat-box">
+              <span class="gh-stat-num">100%</span>
+              <span class="gh-stat-label">Self-Taught Dedication</span>
+            </div>
+          </div>
+
+          <div class="github-embed-container">
+            <img src="https://github-readme-stats.vercel.app/api?username=ADImatrix-user&show_icons=true&theme=dark&bg_color=0c101a&title_color=00f0ff&text_color=94a3b8&icon_color=7000ff&border_color=1e293b" 
+                 alt="Aditya's GitHub Stats" class="gh-embed-img" 
+                 onerror="this.style.display='none'">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ADImatrix-user&layout=compact&theme=dark&bg_color=0c101a&title_color=00f0ff&text_color=94a3b8&border_color=1e293b" 
+                 alt="Aditya's Top Languages" class="gh-embed-img"
+                 onerror="this.style.display='none'">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certificates & Badges Section -->
+    <section id="certificates" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Verified Accomplishments</span>
+          <h2 class="section-title">Certificates & <span class="text-gradient">Badges</span></h2>
+          <div class="header-line"></div>
+          <p class="section-intro">
+            Learned through self-study platforms including <strong>Coddy.tech</strong> and <strong>CISCO Networking Academy</strong>. Click on any certificate to view in full resolution!
+          </p>
+        </div>
+
+        <div class="certificates-grid">
+          
+          <!-- Cert 1: CISCO HTML Essentials + Badge -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202608/01/auHotId3duFfjETR1nSH/image.png" data-cert-title="Certificate of HTML essentials (CISCO)">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202608/01/auHotId3duFfjETR1nSH/image.png" alt="Certificate of HTML essentials" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag cisco-tag">CISCO Academy</span>
+              <h3>Certificate of HTML Essentials</h3>
+              <p>Issued by CISCO Academy upon mastery of HTML web structure and semantics.</p>
+              
+              <div class="badge-feature-box">
+                <img src="https://plain-apac-prod-public.komododecks.com/202608/01/Psgafiuv9eC30fDksVPW/image.png" alt="Badge of HTML essentials by CISCO" class="cisco-badge-img">
+                <div>
+                  <strong>Official CISCO Badge</strong>
+                  <p>Badge of HTML Essentials</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Coddy HTML Fundamental -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/I9vmQEvogqGAbwvgnjGG/image.png" data-cert-title="Certificate of HTML Fundamental">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202607/15/I9vmQEvogqGAbwvgnjGG/image.png" alt="Certificate of HTML fundamental" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag coddy-tag">Coddy.tech</span>
+              <h3>Certificate of HTML Fundamental</h3>
+              <p>Core concepts of HTML tags, page structure, forms, and web elements.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3: Coddy HTML Styling with CSS -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/2REyMuX39Bx1WCQEY480/image.png" data-cert-title="Certificate of HTML Styling with CSS">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202607/15/2REyMuX39Bx1WCQEY480/image.png" alt="Certificate of HTML Styling with CSS" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag coddy-tag">Coddy.tech</span>
+              <h3>Certificate of HTML Styling with CSS</h3>
+              <p>Styling web pages, CSS rules, box model, colors, and visual presentation.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4: Coddy HTML CSS Mastery -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/ZMc8P6Jx53fToXTpOZxH/image.png" data-cert-title="Certificate of HTML CSS Mastery">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202607/15/ZMc8P6Jx53fToXTpOZxH/image.png" alt="Certificate of HTML CSS Mastery" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag coddy-tag">Coddy.tech</span>
+              <h3>Certificate of HTML CSS Mastery</h3>
+              <p>Advanced layouts, responsive design, animations, and front-end best practices.</p>
+            </div>
+          </div>
+
+          <!-- Cert 5: Coddy HTML Practical Frontend -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/21/eEyIvHzoxt4ttSmMPjIL/image.png" data-cert-title="Certificate of HTML Practical Frontend">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202607/21/eEyIvHzoxt4ttSmMPjIL/image.png" alt="Certificate of HTML Practical Frontend" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag coddy-tag">Coddy.tech</span>
+              <h3>Certificate of HTML Practical Frontend</h3>
+              <p>Hands-on practical frontend web development building interactive interfaces.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Passion & Curiosity</span>
+          <h2 class="section-title">My <span class="text-gradient">Interests</span></h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="interests-grid">
+          <div class="glass-card interest-box" data-tilt>
+            <div class="interest-icon"><i class="fa-solid fa-shield-virus"></i></div>
+            <h3>Cybersecurity</h3>
+            <p>Fascinated by computer security, network defence, encryption, and understanding vulnerability analysis.</p>
+          </div>
+
+          <div class="glass-card interest-box" data-tilt>
+            <div class="interest-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <h3>Game Development</h3>
+            <p>Interested in game mechanics, board game logic (like Snake & Ladder), physics engines, and graphics.</p>
+          </div>
+
+          <div class="glass-card interest-box" data-tilt>
+            <div class="interest-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <h3>Computer Networking</h3>
+            <p>Eager to learn about OSI layers, IP routing, packet inspection, protocols, and cloud architecture.</p>
+          </div>
+
+          <div class="glass-card interest-box" data-tilt>
+            <div class="interest-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <h3>Problem Solving</h3>
+            <p>Enjoy cracking logical puzzles, algorithmic challenges in Python & JavaScript, and continuous self-learning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Let's Connect</span>
+          <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          
+          <div class="glass-card contact-info-card" data-tilt>
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out to me for collaboration, inquiries, or just to say hello!</p>
+
+            <div class="contact-items">
+              
+              <!-- Gmail -->
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="c-detail">
+                  <span class="c-label">Direct Gmail Compose</span>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bakodiyaadi@gmail.com" target="_blank" class="c-value gmail-direct-link" title="Open directly in Gmail">
+                    bakodiyaadi@gmail.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                  </a>
+                </div>
+                <button class="btn-copy" id="btn-copy-email" title="Copy Email Address">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="c-detail">
+                  <span class="c-label">GitHub Profile</span>
+                  <a href="https://github.com/ADImatrix-user" target="_blank" class="c-value">github.com/ADImatrix-user</a>
+                </div>
+                <a href="https://github.com/ADImatrix-user" target="_blank" class="btn-external">
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Reddit -->
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-brands fa-reddit-alien"></i></div>
+                <div class="c-detail">
+                  <span class="c-label">Reddit User</span>
+                  <a href="https://www.reddit.com/user/Abject_Plan6375/" target="_blank" class="c-value">u/Abject_Plan6375</a>
+                </div>
+                <a href="https://www.reddit.com/user/Abject_Plan6375/" target="_blank" class="btn-external">
+                  <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="c-detail">
+                  <span class="c-label">Location</span>
+                  <span class="c-value">Daman, India</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-card contact-form-card">
+            <h3>Send Me A Message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <input type="text" id="form-name" placeholder="John Doe" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="form-email">Your Email</label>
+                <input type="email" id="form-email" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" placeholder="Portfolio Feedback / Hello" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="4" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-code">&lt;AB/&gt;</span> Aditya Bakodiya
+      </div>
+      <p>&copy; <span id="current-year">2026</span> Aditya Bakodiya. Built with passion, HTML, CSS & JavaScript.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/ADImatrix-user" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.reddit.com/user/Abject_Plan6375/" target="_blank" aria-label="Reddit"><i class="fa-brands fa-reddit-alien"></i></a>
+        <a href="mailto:bakodiyaadi@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Certificate Lightbox Modal Overlay -->
+  <div id="cert-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <img id="modal-cert-img" src="" alt="Certificate Large View" class="modal-img">
+        <h3 id="modal-cert-title" class="modal-title"></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10th Result Scorecard Modal Overlay -->
+  <div id="result-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container score-modal-container">
+      <button id="result-modal-close-btn" class="modal-close" aria-label="Close result modal">&times;</button>
+      <div class="modal-body">
+        <div class="result-header">
+          <i class="fa-solid fa-school-flag result-icon"></i>
+          <h3>Shree Machhi Mahajan English Medium School, Daman</h3>
+          <p>10<sup>th</sup> Standard Board Examination Result Summary</p>
+        </div>
+
+        <div class="result-stats-grid">
+          <div class="result-stat-box">
+            <span class="res-label">Candidate Name</span>
+            <span class="res-val">Aditya Bakodiya</span>
+          </div>
+          <div class="result-stat-box">
+            <span class="res-label">Overall Percentage</span>
+            <span class="res-val highlight-val">82.17%</span>
+          </div>
+          <div class="result-stat-box">
+            <span class="res-label">Percentile Rank</span>
+            <span class="res-val highlight-val">86.37</span>
+          </div>
+          <div class="result-stat-box">
+            <span class="res-label">Status</span>
+            <span class="res-val pass-val"><i class="fa-solid fa-circle-check"></i> PASSED (FIRST CLASS)</span>
+          </div>
+        </div>
+
+        <div class="score-breakdown-box">
+          <h4>Performance Breakdown</h4>
+          <div class="score-bar-item">
+            <span>Overall Score (82.17%)</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 82.17%;"></div></div>
+          </div>
+          <div class="score-bar-item">
+            <span>Percentile Rank (86.37)</span>
+            <div class="progress-track"><div class="progress-fill" style="width: 86.37%; background: var(--accent-color);"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Academic Resume / Profile Summary Modal Overlay -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container score-modal-container" style="max-width: 700px;">
+      <button id="resume-modal-close-btn" class="modal-close" aria-label="Close resume modal">&times;</button>
+      <div class="modal-body" id="resume-printable-area">
+        
+        <div class="resume-modal-header" style="text-align: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 1.2rem; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.2rem;">Aditya Bakodiya</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Diploma in Computer Science Student &bull; Web & Tech Aspirant</p>
+          <p style="color: var(--primary-color); font-size: 0.85rem; margin-top: 0.3rem;">
+            <i class="fa-solid fa-location-dot"></i> Daman, India &bull; <i class="fa-solid fa-envelope"></i> bakodiyaadi@gmail.com
+          </p>
+        </div>
+
+        <div class="resume-section-box" style="margin-bottom: 1.2rem;">
+          <h4 style="color: var(--primary-color); font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-user-graduate"></i> Academic Standing
+          </h4>
+          <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li><strong>Diploma in Computer Science:</strong> Polytechnic College, Daman — <em>Merit Admission Rank #7</em></li>
+            <li><strong>10th Board Examination:</strong> Shree Machhi Mahajan School, Daman — <em>82.17% Score | 86.37 Percentile Rank</em></li>
+          </ul>
+        </div>
+
+        <div class="resume-section-box" style="margin-bottom: 1.2rem;">
+          <h4 style="color: var(--primary-color); font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-code"></i> Technical Stack & Competencies
+          </h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            <strong>Web Development:</strong> HTML5, CSS3 Glassmorphic Styling, Responsive Flexbox & Grid, CSS Keyframe Animations, Vanilla JavaScript (ES6+).<br>
+            <strong>Programming & Systems:</strong> Python (Logic & CLI tools), Cybersecurity & Networking Fundamentals (CISCO Academics).
+          </p>
+        </div>
+
+        <div class="resume-section-box" style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-color); font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-award"></i> Verified Certifications
+          </h4>
+          <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.5;">
+            <li>Certificate & Official Badge of HTML Essentials — <strong>CISCO Academy</strong></li>
+            <li>Certificate of HTML Fundamental — <strong>Coddy.tech</strong></li>
+            <li>Certificate of HTML Styling with CSS — <strong>Coddy.tech</strong></li>
+            <li>Certificate of HTML CSS Mastery — <strong>Coddy.tech</strong></li>
+            <li>Certificate of HTML Practical Frontend — <strong>Coddy.tech</strong></li>
+          </ul>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center;" class="no-print">
+          <button id="btn-print-resume" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-print"></i> Print / Save as PDF
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bakodiyaadi@gmail.com" target="_blank" class="btn btn-glass btn-sm">
+            <i class="fa-solid fa-paper-plane"></i> Contact Aditya
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-    
