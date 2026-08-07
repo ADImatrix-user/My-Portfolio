@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ADImatrix-user.github.io/my-portfolio/sitemap.xml
+Sitemap: https://adimatrix-user.github.io/My-Portfolio/sitemap.xml
