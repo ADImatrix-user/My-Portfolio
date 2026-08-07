@@ -412,7 +412,11 @@ document.addEventListener('DOMContentLoaded', () => {
     resumeModal.setAttribute('aria-hidden', 'true');
   }
 
-  if (btnDownloadResume) btnDownloadResume.addEventListener('click', openResumeModal);
+  if (btnDownloadResume) {
+    btnDownloadResume.addEventListener('click', () => {
+      showToast('Downloading official resume PDF...', 'success');
+    });
+  }
   if (resumeModalCloseBtn) resumeModalCloseBtn.addEventListener('click', closeResumeModal);
   if (btnPrintResume) {
     btnPrintResume.addEventListener('click', () => {
