@@ -426,7 +426,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const btnCloseResumeBottom = document.getElementById('btn-close-resume-bottom');
   if (resumeModalCloseBtn) resumeModalCloseBtn.addEventListener('click', closeResumeModal);
+  if (btnCloseResumeBottom) btnCloseResumeBottom.addEventListener('click', closeResumeModal);
   if (btnPrintResume) {
     btnPrintResume.addEventListener('click', () => {
       window.open('Aditya_Bakodiya_Resume.pdf', '_blank');
@@ -616,4 +618,3 @@ greet_student("Aditya Bakodiya", 16, "Diploma in Computer Science")`
   }
 
 });
-
