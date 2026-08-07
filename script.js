@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typewriterText = document.getElementById('typewriter-text');
   if (typewriterText) {
     const phrases = [
-      " Diploma Computer Science Student",
+      "Diploma Computer Science Student",
       "16-Year-Old Tech Learner",
       "Future Software Engineer",
       "Cybersecurity Enthusiast",
@@ -397,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   const resumeModal = document.getElementById('resume-modal');
   const btnDownloadResume = document.getElementById('btn-download-resume');
+  const btnDownloadOfficialPdf = document.getElementById('btn-download-official-pdf');
   const resumeModalCloseBtn = document.getElementById('resume-modal-close-btn');
   const btnPrintResume = document.getElementById('btn-print-resume');
 
@@ -413,14 +414,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (btnDownloadResume) {
-    btnDownloadResume.addEventListener('click', () => {
+    btnDownloadResume.addEventListener('click', (e) => {
+      e.preventDefault();
+      openResumeModal();
+    });
+  }
+
+  if (btnDownloadOfficialPdf) {
+    btnDownloadOfficialPdf.addEventListener('click', () => {
       showToast('Downloading official resume PDF...', 'success');
     });
   }
+
   if (resumeModalCloseBtn) resumeModalCloseBtn.addEventListener('click', closeResumeModal);
   if (btnPrintResume) {
     btnPrintResume.addEventListener('click', () => {
-      window.print();
+      window.open('Aditya_Bakodiya_Resume.pdf', '_blank');
     });
   }
 
@@ -607,3 +616,4 @@ greet_student("Aditya Bakodiya", 16, "Diploma in Computer Science")`
   }
 
 });
+
