@@ -30,7 +30,13 @@ There are two ways to view this project on your computer.
 4. Open the extracted folder.
 5. Double-click **`index.html`**, or right-click it and choose **Open with → Google Chrome** (or any modern web browser).
 
-### Method 2: Copy & Paste ( recommonded)
+### Method 2: Typing My Name
+
+1. Open your browser
+2. type : **`Aditya Bakodiya`**
+3. Click on link which shows **`GitHub Pages documentations`**
+
+### Method 3: Copy & Paste ( recommonded)
 
 1. Copy this URL :  **`https://adimatrix-user.github.io/My-Portfolio/`**
 2. Pate this in address bar and it will work.
