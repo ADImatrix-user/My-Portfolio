@@ -206,11 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const typewriterText = document.getElementById('typewriter-text');
   if (typewriterText) {
     const phrases = [
-      "Diploma Computer Science Student",
-      "16-Year-Old Tech Learner",
-      "Future Software Engineer",
-      "Cybersecurity Enthusiast",
-      "Web Developer & Fast Learner"
+      " Diploma Computer Enginner Student",
+      " 16-Year-Old Tech Learner",
+      " Future Software Engineer",
+      " Cybersecurity Enthusiast",
+      " Web Developer & Fast Learner"
     ];
 
     let phraseIndex = 0;
