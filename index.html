@@ -928,26 +928,26 @@
             <form id="contact-form" class="contact-form">
               <div class="form-group">
                 <label for="form-name">Your Name</label>
-                <input type="text" id="form-name" placeholder="John Doe" required>
+                <input type="text" id="form-name" name="name" placeholder="John Doe" required>
               </div>
 
               <div class="form-group">
                 <label for="form-email">Your Email</label>
-                <input type="email" id="form-email" placeholder="john@example.com" required>
+                <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
               </div>
 
               <div class="form-group">
                 <label for="form-subject">Subject</label>
-                <input type="text" id="form-subject" placeholder="Portfolio Feedback / Hello" required>
+                <input type="text" id="form-subject" name="subject" placeholder="Portfolio Feedback / Hello" required>
               </div>
 
               <div class="form-group">
                 <label for="form-message">Message</label>
-                <textarea id="form-message" rows="4" placeholder="Write your message here..." required></textarea>
+                <textarea id="form-message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
+              <button type="submit" id="btn-submit-form" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-paper-plane"></i> <span id="submit-btn-text">Send Message</span>
               </button>
             </form>
           </div>
