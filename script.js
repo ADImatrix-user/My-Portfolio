@@ -900,13 +900,14 @@ greet_student("Aditya Bakodiya", 16, "Diploma in Computer Science")`
   if (codeInput) loadPreset('html');
 
   /* ==========================================================================
-     16. Copy Email & Contact Form Handler
+     16. Copy Email & Contact Form Handler (Direct In-Web AJAX Email)
      ========================================================================== */
   const btnCopyEmail = document.getElementById('btn-copy-email');
   if (btnCopyEmail) {
     btnCopyEmail.addEventListener('click', () => {
       navigator.clipboard.writeText('bakodiyaadi@gmail.com').then(() => {
         showToast('Email copied to clipboard: bakodiyaadi@gmail.com 📋', 'success');
+        playTone(700, 0.08, 'sine');
       }).catch(() => {
         showToast('Failed to copy email', 'error');
       });
@@ -914,12 +915,74 @@ greet_student("Aditya Bakodiya", 16, "Diploma in Computer Science")`
   }
 
   const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('btn-submit-form');
+  const submitBtnText = document.getElementById('submit-btn-text');
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('form-name').value;
-      showToast(`Thank you, ${name}! Your message has been sent successfully. 🚀`, 'success');
-      contactForm.reset();
+
+      const name = document.getElementById('form-name').value.trim();
+      const email = document.getElementById('form-email').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showToast('Please fill in all fields before sending.', 'info');
+        return;
+      }
+
+      // Set Loading State (Web UI remains responsive and stays on the page)
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        submitBtn.style.cursor = 'not-allowed';
+        if (submitBtnText) submitBtnText.textContent = 'Sending Message...';
+        const icon = submitBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-spinner fa-spin';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/bakodiyaadi@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: `Portfolio Message from ${name}: ${subject}`,
+            subject: subject,
+            message: message,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok || result.success === 'true' || result.success === true) {
+          showToast(`Thank you, ${name}! Your message was sent straight to Aditya's inbox. 🚀`, 'success');
+          playTone(850, 0.15, 'triangle', 0.08);
+          contactForm.reset();
+        } else {
+          showToast('Could not deliver message via web. You can email directly to bakodiyaadi@gmail.com', 'error');
+        }
+      } catch (err) {
+        console.error('Contact form submission error:', err);
+        showToast('Network error while sending. Please try again or email directly to bakodiyaadi@gmail.com', 'error');
+      } finally {
+        // Reset Button State
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+          submitBtn.style.cursor = '';
+          if (submitBtnText) submitBtnText.textContent = 'Send Message';
+          const icon = submitBtn.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-paper-plane';
+        }
+      }
     });
   }
 
