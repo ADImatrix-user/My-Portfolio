@@ -82,8 +82,8 @@
       </ul>
 
       <div class="nav-actions">
-        <button id="sound-toggle" class="btn-icon" title="Toggle Sound Effects" aria-label="Toggle Sound">
-          <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+        <button id="sound-toggle" class="btn-icon" title="Toggle Sound Effects" aria-label="Toggle Sound" style="color: var(--primary-color);">
+          <i class="fa-solid fa-volume-high" id="sound-icon"></i>
         </button>
         <button id="theme-toggle" class="btn-icon" title="Toggle Accent Color" aria-label="Toggle Accent Theme">
           <i class="fa-solid fa-palette"></i>
@@ -141,7 +141,7 @@
             <span class="stat-label">Diploma Merit Rank</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number">5+</span>
+            <span class="stat-number">6+</span>
             <span class="stat-label">Certificates Earned</span>
           </div>
           <div class="stat-card">
@@ -154,8 +154,7 @@
       <div class="hero-visual">
         <div class="avatar-frame-wrapper" data-tilt>
           <div class="avatar-glow"></div>
-          <img
-            src="https://i.pinimg.com/1200x/bf/5b/e6/bf5be62a7ff19752835798ba7333d5f5.jpg"
+          <img src="https://i.pinimg.com/1200x/bf/5b/e6/bf5be62a7ff19752835798ba7333d5f5.jpg"
             alt="Aditya Bakodiya Photo" class="avatar-img" id="my-avatar-img">
 
           <div class="avatar-badge badge-top">
@@ -338,10 +337,10 @@
             <div class="progress-bar-container">
               <div class="progress-info">
                 <span>Proficiency Level</span>
-                <span class="percentage">75%</span>
+                <span class="percentage" data-target="70">70%</span>
               </div>
               <div class="progress-track">
-                <div class="progress-fill" style="width: 75%;"></div>
+                <div class="progress-fill" data-width="70%" style="width: 70%;"></div>
               </div>
             </div>
             <div class="skill-tags">
@@ -357,7 +356,7 @@
               <div class="skill-icon python-color"><i class="fa-brands fa-python"></i></div>
               <div class="skill-title-wrap">
                 <h3>Python</h3>
-                <span class="level-badge level-beginner">Beginner+</span>
+                <span class="level-badge level-beginner">Beginner</span>
               </div>
             </div>
             <p class="skill-desc">
@@ -367,10 +366,10 @@
             <div class="progress-bar-container">
               <div class="progress-info">
                 <span>Proficiency Level</span>
-                <span class="percentage">60%</span>
+                <span class="percentage" data-target="30">30%</span>
               </div>
               <div class="progress-track">
-                <div class="progress-fill" style="width: 60%;"></div>
+                <div class="progress-fill" data-width="30%" style="width: 30%;"></div>
               </div>
             </div>
             <div class="skill-tags">
@@ -386,7 +385,7 @@
               <div class="skill-icon js-color"><i class="fa-brands fa-square-js"></i></div>
               <div class="skill-title-wrap">
                 <h3>JavaScript (ES6+)</h3>
-                <span class="level-badge level-beginner">Beginner</span>
+                <span class="level-badge level-beginner">Beginner+</span>
               </div>
             </div>
             <p class="skill-desc">
@@ -396,16 +395,46 @@
             <div class="progress-bar-container">
               <div class="progress-info">
                 <span>Proficiency Level</span>
-                <span class="percentage">50%</span>
+                <span class="percentage" data-target="40">40%</span>
               </div>
               <div class="progress-track">
-                <div class="progress-fill" style="width: 50%;"></div>
+                <div class="progress-fill" data-width="40%" style="width: 40%;"></div>
               </div>
             </div>
             <div class="skill-tags">
               <span>DOM Interactions</span>
               <span>Loops & Switch</span>
               <span>Event Handling</span>
+            </div>
+          </div>
+
+          <!-- C Language Skill Card -->
+          <div class="glass-card skill-card" data-tilt>
+            <div class="skill-head">
+              <div class="skill-icon c-lang-color"><i class="fa-solid fa-c"></i></div>
+              <div class="skill-title-wrap">
+                <h3>C Language</h3>
+                <span class="level-badge level-beginner">Beginner+</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Solid understanding of C programming fundamentals, memory management, pointers, control flow, functions,
+              algorithms, and creator of the online AB C Studio compiler IDE.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-info">
+                <span>Proficiency Level</span>
+                <span class="percentage" data-target="50">50%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-width="50%" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="skill-tags">
+              <span>C17 Standard</span>
+              <span>GCC Compiler</span>
+              <span>Memory & Pointers</span>
+              <span>Online IDE Creator</span>
             </div>
           </div>
 
@@ -425,10 +454,10 @@
             <div class="progress-bar-container">
               <div class="progress-info">
                 <span>Knowledge & Enthusiasm</span>
-                <span class="percentage">70%</span>
+                <span class="percentage" data-target="20">20%</span>
               </div>
               <div class="progress-track">
-                <div class="progress-fill" style="width: 70%;"></div>
+                <div class="progress-fill" data-width="20%" style="width: 20%;"></div>
               </div>
             </div>
             <div class="skill-tags">
@@ -452,6 +481,52 @@
         </div>
 
         <div class="projects-grid">
+
+          <!-- Flagship Featured Project Card: AB C Studio (Online C Compiler & IDE) -->
+          <div class="glass-card project-card featured-project featured-project-c" data-tilt>
+            <div class="project-badge project-badge-cyan"><i class="fa-solid fa-bolt"></i> Live Full IDE</div>
+            <div class="project-content">
+              <h3>⚡ AB C Studio <span class="project-accent-tag">GCC 13.2 / C17</span></h3>
+              <p class="project-text">
+                A modern, distraction-free online C language compiler and interactive IDE designed for developers,
+                students, and competitive programmers. Built with dual cloud GCC compilation backends, real-time
+                interactive terminal stream (<kbd>scanf</kbd> input support), draggable layout resizer, responsive
+                mobile switcher, code import/export, and instant execution with zero intrusive ads.
+              </p>
+              <div class="project-features-grid">
+                <div class="pf-pill"><i class="fa-solid fa-server"></i> <span>Dual Cloud GCC Compilation Engine</span>
+                </div>
+                <div class="pf-pill"><i class="fa-solid fa-arrows-left-right"></i> <span>Desktop Draggable Split
+                    Resizer</span></div>
+                <div class="pf-pill"><i class="fa-solid fa-mobile-screen-button"></i> <span>Mobile-Adaptive View
+                    Switcher</span></div>
+                <div class="pf-pill"><i class="fa-solid fa-file-arrow-down"></i> <span>File Drag &amp; Drop /
+                    Download</span></div>
+                <div class="pf-pill"><i class="fa-solid fa-keyboard"></i> <span><kbd>Ctrl</kbd>+<kbd>Enter</kbd> Run
+                    &amp; Shortcuts</span></div>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">C17 Standard</span>
+                <span class="tech-tag">GCC 13.2 Cloud API</span>
+                <span class="tech-tag">Vanilla JavaScript (ES6+)</span>
+                <span class="tech-tag">Interactive Terminal Stream</span>
+                <span class="tech-tag">CSS Grid &amp; Flexbox</span>
+                <span class="tech-tag">Obsidian Glass UI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://adimatrix-user.github.io/C-compiler/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-play"></i> Launch C Compiler Live <i
+                    class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                </a>
+                <a href="https://github.com/ADImatrix-user/c-compiler" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-glass">
+                  <i class="fa-brands fa-github"></i> View GitHub Repository
+                </a>
+                <span class="status-live"><i class="fa-solid fa-circle"></i> Live Web App</span>
+              </div>
+            </div>
+          </div>
 
           <!-- Featured Project Card: My Portfolio -->
           <div class="glass-card project-card featured-project" data-tilt>
@@ -523,13 +598,18 @@
           <div class="playground-header">
             <div class="playground-title">
               <i class="fa-solid fa-terminal"></i>
-              <span>Interactive Code Sandbox & Playground</span>
+              <span>Interactive Code Sandbox &amp; Playground</span>
             </div>
             <div class="playground-tabs">
               <button class="tab-btn active" data-tab="html">HTML/CSS Demo</button>
               <button class="tab-btn" data-tab="js">JavaScript Logic</button>
+              <button class="tab-btn" data-tab="c"><i class="fa-solid fa-c"></i> C (GCC Preview)</button>
               <button class="tab-btn" data-tab="python">Python Snippet</button>
             </div>
+            <a href="https://adimatrix-user.github.io/C-compiler/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-sm btn-neon" style="text-decoration:none;">
+              <i class="fa-solid fa-bolt"></i> Launch Full C Compiler IDE
+            </a>
           </div>
           <div class="playground-body">
             <div class="code-editor-area">
@@ -566,20 +646,20 @@
 
           <div class="github-stats-grid">
             <div class="gh-stat-box">
+              <span class="gh-stat-num">C &amp; Web Apps</span>
+              <span class="gh-stat-label">Compilers &amp; Tools</span>
+            </div>
+            <div class="gh-stat-box">
               <span class="gh-stat-num">HTML5 / CSS3</span>
-              <span class="gh-stat-label">Primary Stack</span>
+              <span class="gh-stat-label">Modern Frontend</span>
             </div>
             <div class="gh-stat-box">
-              <span class="gh-stat-num">Python & JS</span>
-              <span class="gh-stat-label">Logic & CLI Tools</span>
+              <span class="gh-stat-num">Python &amp; JS</span>
+              <span class="gh-stat-label">Logic &amp; Algorithms</span>
             </div>
             <div class="gh-stat-box">
-              <span class="gh-stat-num">5+</span>
+              <span class="gh-stat-num">6+</span>
               <span class="gh-stat-label">Verified Certifications</span>
-            </div>
-            <div class="gh-stat-box">
-              <span class="gh-stat-num">100%</span>
-              <span class="gh-stat-label">Self-Taught Dedication</span>
             </div>
           </div>
 
@@ -604,8 +684,8 @@
           <h2 class="section-title">Certificates & <span class="text-gradient">Badges</span></h2>
           <div class="header-line"></div>
           <p class="section-intro">
-            Learned through self-study platforms including <strong>Coddy.tech</strong> and <strong>CISCO Networking
-              Academy</strong>. Click on any certificate to view in full resolution!
+            Learned through verified self-study platforms including <strong>Coursera</strong>, <strong>CISCO Networking
+              Academy</strong>, and <strong>Coddy.tech</strong>. Click on any certificate to view in full resolution!
           </p>
         </div>
 
@@ -638,7 +718,25 @@
             </div>
           </div>
 
-          <!-- Cert 2: Coddy HTML Fundamental -->
+          <!-- Cert 2: Coursera - Build a free website with WordPress -->
+          <div class="glass-card cert-card" data-tilt data-cert-img="https://plain-apac-prod-public.komododecks.com/202608/24/PpIxoIgoNucaNPzuZNGG/image.png"
+            data-cert-title="Build a free website with WordPress (Coursera)">
+            <div class="cert-img-wrapper">
+              <img src="https://plain-apac-prod-public.komododecks.com/202608/24/PpIxoIgoNucaNPzuZNGG/image.png"
+                alt="Official Coursera Certificate - Build a free website with WordPress" class="cert-img">
+              <div class="cert-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="platform-tag coursera-tag"><i class="fa-solid fa-graduation-cap"></i> Coursera</span>
+              <h3>Build a free website with WordPress</h3>
+              <p>Official Coursera Project Certificate. Authorized by Coursera covering hands-on WordPress website
+                creation, theme configuration, Gutenberg block layout design, and publishing.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3: Coddy HTML Fundamental -->
           <div class="glass-card cert-card" data-tilt
             data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/I9vmQEvogqGAbwvgnjGG/image.png"
             data-cert-title="Certificate of HTML Fundamental">
@@ -656,7 +754,7 @@
             </div>
           </div>
 
-          <!-- Cert 3: Coddy HTML Styling with CSS -->
+          <!-- Cert 4: Coddy HTML Styling with CSS -->
           <div class="glass-card cert-card" data-tilt
             data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/2REyMuX39Bx1WCQEY480/image.png"
             data-cert-title="Certificate of HTML Styling with CSS">
@@ -674,7 +772,7 @@
             </div>
           </div>
 
-          <!-- Cert 4: Coddy HTML CSS Mastery -->
+          <!-- Cert 5: Coddy HTML CSS Mastery -->
           <div class="glass-card cert-card" data-tilt
             data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/15/ZMc8P6Jx53fToXTpOZxH/image.png"
             data-cert-title="Certificate of HTML CSS Mastery">
@@ -692,7 +790,7 @@
             </div>
           </div>
 
-          <!-- Cert 5: Coddy HTML Practical Frontend -->
+          <!-- Cert 6: Coddy HTML Practical Frontend -->
           <div class="glass-card cert-card" data-tilt
             data-cert-img="https://plain-apac-prod-public.komododecks.com/202607/21/eEyIvHzoxt4ttSmMPjIL/image.png"
             data-cert-title="Certificate of HTML Practical Frontend">
