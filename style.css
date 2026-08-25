@@ -352,9 +352,20 @@ img {
 }
 
 @keyframes radar-pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.6); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .radar-section-name {
@@ -501,8 +512,8 @@ img {
   position: relative;
   overflow: hidden;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color var(--transition-normal),
-              box-shadow var(--transition-normal);
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
   will-change: transform;
 }
 
@@ -513,12 +524,10 @@ img {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: radial-gradient(
-    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    var(--primary-glow),
-    rgba(255, 255, 255, 0.05) 40%,
-    transparent 80%
-  );
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      var(--primary-glow),
+      rgba(255, 255, 255, 0.05) 40%,
+      transparent 80%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -660,7 +669,7 @@ img {
   opacity: 0;
   transform: translateY(30px) scale(0.98);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -916,9 +925,20 @@ img {
 }
 
 @keyframes pulse-glow {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.7); }
-  70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.7);
+  }
+
+  70% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(0, 255, 157, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 157, 0);
+  }
 }
 
 .hero-title {
@@ -929,31 +949,61 @@ img {
 }
 
 .typewriter-container {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-family: var(--font-code);
   color: var(--text-muted);
   margin-bottom: 1.5rem;
-  height: 2.2rem;
+  min-height: 2.2rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0.25rem;
+  line-height: 1.4;
+}
+
+.typewriter-prefix {
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin-right: 0.45rem;
+  flex-shrink: 0;
+}
+
+.typewriter-text-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
 }
 
 .typewriter-text {
   color: var(--primary-color);
   font-weight: 600;
-  text-shadow: 0 0 10px var(--primary-glow);
+  text-shadow: 0 0 12px var(--primary-glow);
+  word-break: break-word;
 }
 
 .cursor {
   display: inline-block;
+  width: 2px;
+  height: 1.2em;
   background-color: var(--primary-color);
-  margin-left: 3px;
-  animation: blink 0.8s infinite;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--primary-glow);
+  animation: blink 0.85s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
@@ -1054,8 +1104,15 @@ img {
 }
 
 @keyframes float-glow {
-  0% { transform: scale(0.98); opacity: 0.45; }
-  100% { transform: scale(1.05); opacity: 0.7; }
+  0% {
+    transform: scale(0.98);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
 }
 
 .avatar-img {
@@ -1110,9 +1167,22 @@ img {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-  40% { transform: translate(-50%, -10px); }
-  60% { transform: translate(-50%, -5px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  40% {
+    transform: translate(-50%, -10px);
+  }
+
+  60% {
+    transform: translate(-50%, -5px);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1703,9 +1773,17 @@ img {
   display: inline-block;
 }
 
-.traffic-dot.red { background: #ff5f56; }
-.traffic-dot.yellow { background: #ffbd2e; }
-.traffic-dot.green { background: #27c93f; }
+.traffic-dot.red {
+  background: #ff5f56;
+}
+
+.traffic-dot.yellow {
+  background: #ffbd2e;
+}
+
+.traffic-dot.green {
+  background: #27c93f;
+}
 
 .editor-controls {
   display: flex;
@@ -2317,8 +2395,15 @@ img {
 }
 
 @keyframes slide-in {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -2339,6 +2424,8 @@ img {
 
   .typewriter-container {
     justify-content: center;
+    font-size: 1.2rem;
+    min-height: 2.4rem;
   }
 
   .hero-description {
@@ -2383,6 +2470,7 @@ img {
 }
 
 @media (max-width: 768px) {
+
   /* Disable heavy background glyphs on mobile to maximize battery & frame rate */
   .tech-glyphs-container {
     display: none !important;
@@ -2405,6 +2493,17 @@ img {
 
   .hero-title {
     font-size: 2.3rem;
+  }
+
+  .typewriter-container {
+    font-size: 1.05rem;
+    min-height: 2.2rem;
+    margin-bottom: 1.3rem;
+    justify-content: center;
+  }
+
+  .typewriter-prefix {
+    margin-right: 0.38rem;
   }
 
   .section-title {
@@ -2659,6 +2758,38 @@ img {
 
   .timeline-item {
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .typewriter-container {
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.1rem;
+    min-height: 2.1rem;
+  }
+
+  .typewriter-prefix {
+    margin-right: 0.32rem;
+  }
+
+  .cursor {
+    height: 1.15em;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .typewriter-container {
+    font-size: 0.8rem;
   }
 }
 
