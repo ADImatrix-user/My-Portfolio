@@ -38,7 +38,7 @@ There are two ways to view this project on your computer.
 
 ### Method 3: Copy & Paste ( recommonded)
 
-1. Copy this URL :  **`https://adimatrix-user.github.io/My-Portfolio/`**
+1. Copy this URL :  **`https://www.aditya-bakodiya.jo3.org/`**
 2. Pate this in address bar and it will work.
 
 ## ✨ Features
